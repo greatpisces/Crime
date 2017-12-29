@@ -12,6 +12,15 @@ public class Crime {
     private String mTitle;
     private Date mDate;
     private boolean mSolved;
+    private String mSuspect;
+
+    public String getSuspect() {
+        return mSuspect;
+    }
+
+    public void setSuspect(String suspect) {
+        mSuspect = suspect;
+    }
 
     public UUID getId() {
         return mId;
@@ -48,5 +57,9 @@ public class Crime {
     public Crime(UUID id){
         mId = id;
         mDate = new Date();
+    }
+
+    public String getPhotoFilename(){
+        return "IMG_" + getId().toString() + ".jpg";
     }
 }
